@@ -1,6 +1,6 @@
 package com.suda.service;
 
-import com.suda.po.Order;
+import com.suda.repository.po.Order;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

@@ -1,7 +1,7 @@
 package com.suda.service.impl;
 
-import com.suda.po.UserIdInfo;
-import com.suda.mapper.UserIdInfoMapper;
+import com.suda.repository.po.UserIdInfo;
+import com.suda.repository.mapper.UserIdInfoMapper;
 import com.suda.service.UserIdInfoService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;

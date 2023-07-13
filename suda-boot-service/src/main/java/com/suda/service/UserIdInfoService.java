@@ -1,6 +1,6 @@
 package com.suda.service;
 
-import com.suda.po.UserIdInfo;
+import com.suda.repository.po.UserIdInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

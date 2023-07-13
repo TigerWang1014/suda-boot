@@ -1,9 +1,9 @@
 package com.suda;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.suda.po.Order;
-import com.suda.po.UserIdInfo;
-import com.suda.po.UserInfo;
+import com.suda.repository.po.Order;
+import com.suda.repository.po.UserIdInfo;
+import com.suda.repository.po.UserInfo;
 import com.suda.service.OrderService;
 import com.suda.service.UserIdInfoService;
 import com.suda.service.UserInfoService;

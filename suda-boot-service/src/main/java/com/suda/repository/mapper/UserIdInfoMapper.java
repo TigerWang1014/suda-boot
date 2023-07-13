@@ -1,6 +1,6 @@
-package com.suda.mapper;
+package com.suda.repository.mapper;
 
-import com.suda.po.UserIdInfo;
+import com.suda.repository.po.UserIdInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

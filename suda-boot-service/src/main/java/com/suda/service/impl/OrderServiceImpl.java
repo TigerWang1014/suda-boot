@@ -1,7 +1,7 @@
 package com.suda.service.impl;
 
-import com.suda.po.Order;
-import com.suda.mapper.OrderMapper;
+import com.suda.repository.po.Order;
+import com.suda.repository.mapper.OrderMapper;
 import com.suda.service.OrderService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;

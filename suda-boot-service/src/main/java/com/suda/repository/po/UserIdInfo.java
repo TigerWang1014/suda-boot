@@ -1,6 +1,5 @@
-package com.suda.po;
+package com.suda.repository.po;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -11,24 +10,30 @@ import lombok.Setter;
 
 /**
  * <p>
- * 用户信息表
+ * 用户身份信息表
  * </p>
  *
  * @author wangxinmin
- * @date 2023/07/04
+ * @date 2023/07/10
  */
 @Getter
 @Setter
-@TableName("t_order")
-public class Order implements Serializable {
+@TableName("user_id_info")
+public class UserIdInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 主键ID
+     * 用户ID
      */
-    @TableId(value = "order_id", type = IdType.AUTO)
-    private Integer orderId;
+    @TableId("user_id")
+    private Integer userId;
+
+    /**
+     * 身份证号
+     */
+    @TableField("id_num")
+    private String idNum;
 
     /**
      * 更新时间

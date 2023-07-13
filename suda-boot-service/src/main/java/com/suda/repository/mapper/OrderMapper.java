@@ -1,6 +1,6 @@
-package com.suda.mapper;
+package com.suda.repository.mapper;
 
-import com.suda.po.Order;
+import com.suda.repository.po.Order;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

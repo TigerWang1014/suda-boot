@@ -1,0 +1,47 @@
+server:
+  port: 8080
+  undertow:
+    # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
+    # 不要设置过大，如果过大，启动项目会报错：打开文件数过多
+    # CPU有几核，就填写几。
+    #io-threads: 8
+    # 阻塞任务线程池, 当执行类似servlet请求阻塞IO操作, undertow会从这个线程池中取得线程
+    #worker-threads: 10
+    # 每块buffer的空间大小,越小的空间被利用越充分，不要设置太大，以免影响其他应用，合适即可
+    buffer-size: 1024
+    # 每个区分配的buffer数量 , 所以pool的大小是buffer-size * buffers-per-region
+    #buffers-per-region: 1024
+    # 是否分配的直接内存(NIO直接分配的堆外内存)
+    direct-buffers: true
+    # 设置最大HTTP POST大小
+    max-http-post-size: 100
+    accesslog:
+      #配置访问日志的目录
+      dir: /Users/wangxinmin/logs/suda-boot/
+      #是否启用访问日志
+      enabled: true
+      # 1. %a：客户端的IP地址。
+      #2. %t：请求的时间戳。
+      #3. %r：请求的第一行。
+      #4. %s：HTTP响应状态码。
+      #5. %b：响应的字节数。
+      #6. %D：请求处理时间（以毫秒为单位）。
+      #7. %T：请求处理时间（以秒为单位）。
+      #8. %U：请求的URL路径。
+      #9. %q：请求的查询参数。
+      #10. %H：请求的协议。
+      #11. %{xxx}i：请求头中名为xxx的字段的值。
+      #12. %{xxx}o：响应头中名为xxx的字段的值。
+      #13. %S：请求的服务器名称。
+      #14. %v：请求的虚拟主机名。
+      #15. %I：当前请求的线程ID。
+      #16. %P：当前请求的进程ID。
+      #17. %L：当前请求的本地端口号。
+      #18. %h：客户端的主机名。
+      pattern: 客户端的IP地址:%a - 时间戳:%t - HTTP响应状态码:%s
+
+
+spring:
+  config:
+    # ShardingSphere-JDBC 配置
+    import: classpath:shardingsphere.yaml

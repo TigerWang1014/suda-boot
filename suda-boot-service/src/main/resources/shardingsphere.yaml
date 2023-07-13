@@ -1,0 +1,77 @@
+spring:
+  shardingsphere:
+    props:
+      # 是否在日志中打印 SQL
+      sql-show: true
+        # 模式配置
+        #mode:
+        # 运行模式类型。可选配置：Memory、Standalone、Cluster
+        # type: Standalone
+        #repository:
+        # 持久化仓库配置。Memory 类型无需持久化
+      #type: File
+      # props:
+      # 元数据存储路径
+      # path: .shardingsphere
+      # 是否使用本地配置覆盖持久化配置
+      #overwrite: true
+    datasource:
+      names: ds1
+      ds1:
+        #根据使用的连接池进行配置，这里使用的druid连接池所以以下的配置信息参照druid进行配置
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3310/suda_boot?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+        username: root
+        password: 123456
+    # 分片规则配置
+    rules:
+      sharding:
+        tables:
+          #user_info用户信息表逻辑表名
+          user_info:
+            # 数据节点
+            actual-data-nodes: ds1.user_info_$->{0..9}
+            # 分表策略
+            table-strategy:
+              standard:
+                # 分片列名称
+                sharding-column: user_id
+                # 分片算法名称
+                sharding-algorithm-name: user_info_sharding
+          #order订单表逻辑表名
+          t_order:
+            # 数据节点
+            actual-data-nodes: ds1.t_order_$->{202301..202312}
+            # 分表策略
+            table-strategy:
+              standard:
+                # 分片列名称
+                sharding-column: create_time
+                # 分片算法名称
+                sharding-algorithm-name: order_sharding
+        sharding-algorithms:
+          user_info_sharding:
+            # 行表达式分片算法 使用 Groovy 的表达式，提供对 SQL 语句中的 = 和 IN 的分片操作支持
+            type: INLINE
+            props:
+              # 分片算法的行表达式
+              algorithm-expression: user_info_$->{user_id % 10}
+              # 是否允许范围查询。注意：范围查询会无视分片策略，进行全路由
+              allow-range-query-with-inline-sharding: true
+          order_sharding:
+            # 时间范围分片算法
+            type: INTERVAL
+            props:
+              #分片键的时间戳格式
+              datetime-pattern: yyyy-MM-dd HH:mm:ss
+              #时间分片下界值
+              datetime-lower: 2023-01-01 00:00:00
+              #时间分片上界值
+              #datetime-upper: 2023-12-31 00:00:00
+              #分片数据源或真实表的后缀格式，必须遵循 Java DateTimeFormatter 的格式(注意不支持yyyy_MM 这种格式)
+              sharding-suffix-pattern: yyyyMM
+              #分片键时间间隔，超过该时间间隔将进入下一分片。ps：按月分片设置为1;按季度分片可以将datetime-interval-amount参数设置为3，最终落到t_order_202301，t_order_202304，t_order_202307，t_order_202310表
+              datetime-interval-amount: 1
+              #分片键时间间隔单位，必须遵循 Java ChronoUnit 的枚举值
+              datetime-interval-unit: MONTHS

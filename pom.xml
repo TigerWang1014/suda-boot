@@ -14,7 +14,7 @@
     <name>suda-boot</name>
     <description>project for Sudo Boot</description>
     <modules>
-        <module>tools</module>
+        <module>suda-boot-tools</module>
         <module>suda-boot-service</module>
         <module>suda-dependencies</module>
     </modules>

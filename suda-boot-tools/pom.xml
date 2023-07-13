@@ -11,15 +11,4 @@
     <name>suda-boot-tools</name>
     <description>tools for Sudo Boot</description>
 
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity-engine-core</artifactId>
-        </dependency>
-    </dependencies>
 </project>

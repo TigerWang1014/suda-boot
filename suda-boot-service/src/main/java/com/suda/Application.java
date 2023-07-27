@@ -7,7 +7,7 @@ import org.springframework.retry.annotation.EnableRetry;
 
 @SpringBootApplication
 @EnableRetry
-@MapperScan("com.suda.mapper")
+@MapperScan("com.suda.repository.mapper")
 public class Application {
 
 	public static void main(String[] args) {

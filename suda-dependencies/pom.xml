@@ -23,9 +23,10 @@
         <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
         <mybatis-plus-generator.version>3.5.1</mybatis-plus-generator.version>
         <velocity-engine-core.version>2.3</velocity-engine-core.version>
-
         <!--NoSql、缓存-->
         <redisson.version>3.19.1</redisson.version>
+        <!--elasticsearch版本-->
+        <elasticsearch.version>8.2.0</elasticsearch.version>
         <!-- 工具包 -->
         <hutool-all.version>5.8.11</hutool-all.version>
         <commons-lang3.version>3.9</commons-lang3.version>
@@ -116,6 +117,17 @@
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson-spring-boot-starter</artifactId>
                 <version>${redisson.version}</version>
+            </dependency>
+
+            <!-- elasticsearch 相关 -->
+            <dependency>
+                <groupId>co.elastic.clients</groupId>
+                <artifactId>elasticsearch-java</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
             </dependency>
 
             <!-- hutool 工具包 -->

@@ -40,15 +40,13 @@ server:
       #18. %h：客户端的主机名。
       pattern: 客户端的IP地址:%a - 时间戳:%t - HTTP响应状态码:%s
 
-
-
 spring:
   # Elasticsearch 配置
   elasticsearch:
     uris:
-      - http://0.0.0.0:9200
+      - http://127.0.0.1:9200
     username: elastic
-    password: N8cR+9wKe25qbzi7Sg6N
+    password: YbxdtaTGk+Xt0u_f=TkD
   config:
     # ShardingSphere-JDBC 配置
     import: classpath:shardingsphere.yaml

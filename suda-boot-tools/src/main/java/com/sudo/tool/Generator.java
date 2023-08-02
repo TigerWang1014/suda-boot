@@ -1,4 +1,4 @@
-package com.sudoframework.boot.tool;
+package com.sudo.tool;
 
 
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;

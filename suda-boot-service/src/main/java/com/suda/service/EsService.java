@@ -9,7 +9,7 @@ import java.util.List;
  * @Author wangxinmin
  * @Date 2023/7/18 14:37
  */
-public interface EsService {
+public interface EsService{
 
     void addIndex() throws IOException;
 

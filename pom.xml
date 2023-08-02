@@ -17,6 +17,8 @@
         <module>suda-boot-tools</module>
         <module>suda-boot-service</module>
         <module>suda-dependencies</module>
+        <module>suda-boot-api</module>
+        <module>suda-boot-framework</module>
     </modules>
 
     <dependencies>

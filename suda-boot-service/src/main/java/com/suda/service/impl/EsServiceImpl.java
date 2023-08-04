@@ -7,7 +7,6 @@ import co.elastic.clients.elasticsearch.core.search.TotalHits;
 import com.suda.repository.po.UserInfo;
 import com.suda.service.EsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -39,7 +38,6 @@ public class EsServiceImpl implements EsService {
         SearchResponse<UserInfo> searchResponse = esClient.search(s -> {
             return s.index(key);
         }, UserInfo.class);
-        TotalHits total = searchResponse.hits().total();
         List<Hit<UserInfo>> hits = searchResponse.hits().hits();
         hits.forEach(e -> {
             userInfoList.add(e.source());

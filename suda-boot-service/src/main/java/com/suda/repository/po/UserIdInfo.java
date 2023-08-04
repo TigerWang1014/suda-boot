@@ -3,6 +3,8 @@ package com.suda.repository.po;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.Getter;
@@ -21,6 +23,7 @@ import lombok.Setter;
 @TableName("user_id_info")
 public class UserIdInfo implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     /**

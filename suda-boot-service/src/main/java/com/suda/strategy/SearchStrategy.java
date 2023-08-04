@@ -1,6 +1,5 @@
 package com.suda.strategy;
 
-import com.suda.dto.BookDto;
 import com.suda.entity.BookEntity;
 
 /**

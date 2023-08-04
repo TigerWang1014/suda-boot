@@ -1,9 +1,7 @@
 package com.suda.entity;
 
-import com.suda.enums.BookType;
 import com.suda.enums.BookTypeStrategyEnum;
 import lombok.Data;
-import lombok.Getter;
 
 /**
  * @Author wangxinmin

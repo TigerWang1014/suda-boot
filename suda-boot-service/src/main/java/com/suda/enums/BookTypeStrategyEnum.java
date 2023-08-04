@@ -1,6 +1,7 @@
 package com.suda.enums;
 
 import com.suda.service.impl.BookMagicServiceImpl;
+import com.suda.service.impl.BookScienceServiceImpl;
 import com.suda.strategy.SearchStrategy;
 import com.suda.utils.SpringBeanUtil;
 import lombok.AllArgsConstructor;
@@ -14,7 +15,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum BookTypeStrategyEnum {
 
-    science("science", "科幻", SpringBeanUtil.getBean(BookMagicServiceImpl.class)),
+    science("science", "科幻", SpringBeanUtil.getBean(BookScienceServiceImpl.class)),
     magic("magic", "魔幻", SpringBeanUtil.getBean(BookMagicServiceImpl.class));
 
     private final String code;
